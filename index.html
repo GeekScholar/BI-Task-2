@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montez&family=Nunito+Sans:wght@200&family=Ubuntu+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/modal.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <title>ScriBBler</title>
+</head>
+
+<body>
+    <div id="main-container">
+        <header>
+            <div id="logo">
+                <a href="index.html" id="title">ScriBBler</a>
+                <p id="subtitle">Explore, Imagine, Create</p>
+            </div>
+            <div id="sign-btn">
+                <button onclick="openSignUpForm()">Sign Up</button>
+                <button onclick="openLoginForm()">Sign In</button>
+            </div>
+        </header>
+
+        <div id="content-container">
+            <button onclick="window.location='./html/postslist.html'">All Posts</button>
+            <button onclick="createPost()">Create Post</button>
+        </div>
+
+        <!-- Login popup starts here -->
+        <div id="id01" class="w3-modal">
+            <div class="w3-modal-content pp w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+                <div class="modal-card"><br>
+                    <div class="modal-title">Welcome Back!</div>
+                    <span onclick="closeLoginForm()" class=" modal-close w3-xlarge w3-display-topright">&times;</span>
+                </div>
+                <hr>
+                <form class="w3-container">
+                    <div class="w3-section">
+                        <div class="element">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" placeholder="Enter your username" required>
+                        </div>
+                        <div class="element">
+                            <label for="pwd">Password</label>
+                            <input type="password" id="pwd" placeholder="Enter your password" required>
+                        </div>
+                        <div class="element">
+                            <button type="submit">Sign In</button>
+                        </div>
+                        <div class="element">
+                            <span>Not a member? <a href="#modal-popup" onclick="openSignUp()">Sign Up</a></span>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <!-- Login popup ends here -->
+
+        <!-- SignUp popup starts here -->
+        <div id="id02" class="w3-modal">
+            <div class="w3-modal-content pp w3-card-4 w3-animate-zoom" style="max-width:600px" id="sign-in-pop">
+
+                <div class="modal-card"><br>
+                    <div class="modal-title">Get Started</div>
+                    <span onclick="closeSignUpForm()" class=" modal-close w3-xlarge w3-display-topright">&times;</span>
+                </div>
+                <hr>
+                <form class="w3-container">
+                    <div class="w3-section">
+                        <div class="element">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="element">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" placeholder="Enter your username" required>
+                        </div>
+                        <div class="element">
+                            <label for="pwd">Password</label>
+                            <input type="password" id="pwd" placeholder="Enter your password" required>
+                        </div>
+                        <div class="element">
+                            <label for="pwd-2">Confirm Password</label>
+                            <input type="password" id="pwd-2" placeholder="Re-enter your password" required>
+                        </div>
+                        <div class="element">
+                            <button type="submit">Sign Up</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <!-- SignUp popup ends here -->
+
+        <!-- Create Post popup starts here -->
+        <div id="id03" class="w3-modal">
+            <div class="w3-modal-content pp w3-card-4 w3-animate-zoom" id="create-post-pop">
+
+                <div class="modal-card"><br>
+                    <div class="modal-title">Pen Your Post!</div>
+                    <span id="close-btn" onclick="closeCreatePost()"
+                        class=" modal-close w3-xlarge w3-display-topright">&times;</span>
+                </div>
+                <hr>
+                <form class="w3-container" id="modal-header">
+                    <div class="w3-section">
+                        <div class="element">
+                            <label for="post-title">Title</label>
+                            <input type="text" id="post-title" placeholder="Enter title of your post" required>
+                        </div>
+                        <div class="element">
+                            <label for="content">Contents</label>
+                            <textarea id="content" rows="6" placeholder="Enter the contents of your post"
+                                required></textarea>
+                        </div>
+                        <div class="element">
+                            <button type="submit" id="create-btn">Create</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <!-- Create Post popup ends here -->
+
+
+    </div>
+
+    <script src="./scripts/index.js"></script>
+</body>
+
+</html>
