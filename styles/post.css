@@ -1,0 +1,92 @@
+body {
+    background-color: white;
+}
+
+.post-container {
+    padding: 0 9%;
+    display: block;
+}
+
+#post-head {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#post-data {
+    text-align: justify;
+}
+
+#post-user {
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 20px;
+}
+
+.edit-btn {
+    position: absolute;    
+    top: -4px;
+    left: 92%;
+}
+
+.btn:active { 
+    border: none; 
+}
+
+.btn:focus { 
+    border: none; 
+}
+
+.btn {
+    background-color: red;
+    border: none;
+    color: white;
+    height: 33px;
+    padding-right: 20px;
+    padding-left: 20px;
+    cursor: pointer;
+    box-shadow: 1px 5px 10px 5px #c0a8a3;
+}
+
+#post-info {
+    position: relative;
+}
+
+#post-data {
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+#post-data > p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#no-likes {
+    color: grey;
+}
+
+#commnt{
+    margin-top: 2%;
+}
+
+#com-btn {
+    margin-top: 1.6%;
+}
+
+#all-comments {
+    margin-top: 3%;
+    font-size: large;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ul {
+    list-style: none;
+    background-color: lightgrey;
+    padding: 1% 1%;
+    width: 65%;
+}
+li {
+    background-color: white;
+    padding: 7px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
