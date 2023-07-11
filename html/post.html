@@ -1,0 +1,158 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montez&family=Nunito+Sans:wght@200&family=Ubuntu+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/modal.css">
+    <link rel="stylesheet" href="../styles/post.css">
+    <title>Post</title>
+</head>
+
+<body>
+    <div id="main-container">
+        <header>
+            <div id="logo">
+                <a href="../index.html" id="title">ScriBBler</a>
+                <p id="subtitle">Explore, Imagine, Create</p>
+            </div>
+            <div id="sign-btn">
+                <button onclick="openSignUpForm()">Sign Up</button>
+                <button onclick="openLoginForm()">Sign In</button>
+            </div>
+        </header>
+
+        <div class="post-container">
+            <h2 id="post-head">Everything you should know about ‘module’ & ‘require’ in Node.js</h2>
+            <div id="post-info">
+                <p id="post-user">Srishti Gupta</p>
+                <button type="submit" class="btn edit-btn" id="edit-btn" onclick="editPost()">
+                    Edit <i class="fa fa-edit"></i>
+                </button>
+            </div>
+            <div id="post-data">
+                <p>Node.js treats each JavaScript file as a separate module. For instance, if
+                    you have a file containing some code and this file is named xyz.js, then this file is treated as a
+                    module in Node, and you
+                    can say that you’ve created a module
+                    named xyz. In the first method, you define the constructs first and then use multiple module.exports
+                    statements where each
+                    statement is used to export something from a module. Let’s look at this method in action and see how
+                    you can export the
+                    two functions defined in the circle module.As I told you earlier, module is an object having the key
+                    named exports and this key (module.exports), in turn, consists
+                    of another object. Now, if you notice the code given above, all you are doing is adding new
+                    properties (key-value pairs)
+                    to the module.exports object. Let’s revisit the circle module, which you looked at earlier. There
+                    are three constructs defined in this module a
+                    constant variable PI, a function named calculateArea and another function named
+                    calculateCircumference. An important
+                    point to keep in mind is that all these constructs are private to the circle module by default. It
+                    means that you cannot
+                    use these constructs in any other module unless explicitly specified.
+
+                    So, the question that arises now is how do you specify something in a module that can be used by
+                    some other module? This
+                    is when the module & require parameters of the function wrapper are helpful. In the code given
+                    above, you can see that the functions in the module are added to the module.exports object when they
+                    are being defined. Let’s look at how this is working. You are adding a key calculateArea to the
+                    module.exports object
+                    and the value corresponding to this key is the function definition.</p>
+            </div>
+            <button class="btn" id="like-btn" onclick="likePost()">
+                <i class="fas fa-thumbs-up"></i> Like
+            </button>
+            <p id="no-likes">Be the first one to like this!</p>
+
+            <textarea name="comment" placeholder="Leave a comment..." id="commnt" cols="90" rows="3"></textarea>
+            <!-- <input type="text" id="add-comment" placeholder="Leave a comment..." value=""> -->
+            <div>
+                <button class="btn" type="submit" id="com-btn" onclick="addComment()">Comment</button>
+            </div>
+            <div class="all-comments">
+                <p id="all-comments">All Comments</p>
+                <ul id="comment-list"></ul>
+            </div>
+
+        </div>
+
+        <!-- Login popup starts here -->
+        <div id="id01" class="w3-modal">
+            <div class="w3-modal-content pp w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+                <div class="modal-card"><br>
+                    <div class="modal-title">Welcome Back!</div>
+                    <span onclick="closeLoginForm()" class=" modal-close w3-xlarge w3-display-topright">&times;</span>
+                </div>
+                <hr>
+                <form class="w3-container">
+                    <div class="w3-section">
+                        <div class="element">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" placeholder="Enter your username" required>
+                        </div>
+                        <div class="element">
+                            <label for="pwd">Password</label>
+                            <input type="password" id="pwd" placeholder="Enter your password" required>
+                        </div>
+                        <div class="element">
+                            <button type="submit">Sign In</button>
+                        </div>
+                        <div class="element">
+                            <span>Not a member? <a href="#modal-popup" onclick="openSignUp()">Sign Up</a></span>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <!-- Login popup ends here -->
+
+        <!-- SignUp popup starts here -->
+        <div id="id02" class="w3-modal">
+            <div class="w3-modal-content pp w3-card-4 w3-animate-zoom" style="max-width:600px" id="sign-in-pop">
+
+                <div class="modal-card"><br>
+                    <div class="modal-title">Get Started</div>
+                    <span onclick="closeSignUpForm()" class=" modal-close w3-xlarge w3-display-topright">&times;</span>
+                </div>
+                <hr>
+                <form class="w3-container">
+                    <div class="w3-section">
+                        <div class="element">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="element">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" placeholder="Enter your username" required>
+                        </div>
+                        <div class="element">
+                            <label for="pwd">Password</label>
+                            <input type="password" id="pwd" placeholder="Enter your password" required>
+                        </div>
+                        <div class="element">
+                            <label for="pwd-2">Confirm Password</label>
+                            <input type="password" id="pwd-2" placeholder="Re-enter your password" required>
+                        </div>
+                        <div class="element">
+                            <button type="submit">Sign Up</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <!-- SignUp popup ends here -->
+
+        <script src="../scripts/index.js"></script>
+        <script src="../scripts/post.js"></script>
+</body>
+
+</html>
