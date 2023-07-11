@@ -1,3 +1,6 @@
+# Live Demo
+https://writeapanna.netlify.app/
+
 # Blogging Website
 
 This is a blogging website project created using HTML, CSS, and JavaScript. The website allows users to create an account, log in, and create their own blog posts. It provides a user-friendly interface for managing and displaying blog content.
